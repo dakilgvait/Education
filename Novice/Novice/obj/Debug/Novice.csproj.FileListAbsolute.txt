@@ -1,0 +1,5 @@
+C:\AsDriveD\www\requireNmaps\Novice\Novice\bin\Debug\Novice.dll
+C:\AsDriveD\www\requireNmaps\Novice\Novice\bin\Debug\Novice.pdb
+C:\AsDriveD\www\requireNmaps\Novice\Novice\obj\Debug\Novice.csprojResolveAssemblyReference.cache
+C:\AsDriveD\www\requireNmaps\Novice\Novice\obj\Debug\Novice.dll
+C:\AsDriveD\www\requireNmaps\Novice\Novice\obj\Debug\Novice.pdb
