@@ -3,3 +3,7 @@ C:\AsDriveD\www\requireNmaps\Novice\Novice\bin\Debug\Novice.pdb
 C:\AsDriveD\www\requireNmaps\Novice\Novice\obj\Debug\Novice.csprojResolveAssemblyReference.cache
 C:\AsDriveD\www\requireNmaps\Novice\Novice\obj\Debug\Novice.dll
 C:\AsDriveD\www\requireNmaps\Novice\Novice\obj\Debug\Novice.pdb
+D:\git\Education\Novice\Novice\bin\Debug\Novice.dll
+D:\git\Education\Novice\Novice\bin\Debug\Novice.pdb
+D:\git\Education\Novice\Novice\obj\Debug\Novice.dll
+D:\git\Education\Novice\Novice\obj\Debug\Novice.pdb

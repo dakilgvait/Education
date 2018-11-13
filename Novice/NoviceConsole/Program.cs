@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using JintLibrary;
 
 namespace NoviceConsole
 {
@@ -10,7 +11,8 @@ namespace NoviceConsole
     {
         static void Main(string[] args)
         {
-            Refactored.Main();
+            Class1 cl = new Class1();
+           
         }
     }
 }

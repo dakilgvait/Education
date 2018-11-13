@@ -5,3 +5,13 @@ C:\AsDriveD\www\requireNmaps\Novice\NoviceConsole\bin\Debug\Novice.pdb
 C:\AsDriveD\www\requireNmaps\Novice\NoviceConsole\obj\Debug\NoviceConsole.csprojResolveAssemblyReference.cache
 C:\AsDriveD\www\requireNmaps\Novice\NoviceConsole\obj\Debug\NoviceConsole.exe
 C:\AsDriveD\www\requireNmaps\Novice\NoviceConsole\obj\Debug\NoviceConsole.pdb
+D:\git\Education\Novice\NoviceConsole\bin\Debug\NoviceConsole.exe
+D:\git\Education\Novice\NoviceConsole\bin\Debug\NoviceConsole.pdb
+D:\git\Education\Novice\NoviceConsole\bin\Debug\Novice.dll
+D:\git\Education\Novice\NoviceConsole\bin\Debug\Novice.pdb
+D:\git\Education\Novice\NoviceConsole\obj\Debug\NoviceConsole.csprojResolveAssemblyReference.cache
+D:\git\Education\Novice\NoviceConsole\obj\Debug\NoviceConsole.exe
+D:\git\Education\Novice\NoviceConsole\obj\Debug\NoviceConsole.pdb
+D:\git\Education\Novice\NoviceConsole\bin\Debug\JintLibrary.dll
+D:\git\Education\Novice\NoviceConsole\bin\Debug\Jint.dll
+D:\git\Education\Novice\NoviceConsole\bin\Debug\JintLibrary.pdb
