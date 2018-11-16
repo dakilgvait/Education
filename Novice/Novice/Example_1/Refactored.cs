@@ -26,7 +26,7 @@
                     sb.AppendLine(string.Format(template, current, count));
                 }
             }
-            return sb.ToString().Trim(Environment.NewLine.ToCharArray());
+            return sb.ToString().TrimEnd(Environment.NewLine.ToCharArray());
         }
 
         private static int GetPreviousIndex(string str, char symbol, int indexFrom)
@@ -37,6 +37,7 @@
                 if (str[i] == symbol)
                 {
                     result = i;
+                    break;
                 }
             }
             return result;

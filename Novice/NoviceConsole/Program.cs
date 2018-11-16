@@ -11,8 +11,8 @@ namespace NoviceConsole
     {
         static void Main(string[] args)
         {
-            Class1 cl = new Class1();
-           
+            //Class1 cl = new Class1();
+            Refactored.Main();
         }
     }
 }
