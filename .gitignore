@@ -4,3 +4,9 @@ Novice/NoviceConsole/bin/*
 Novice/NoviceConsole/obj/*
 Novice/JintLibrary/bin/*
 Novice/JintLibrary/obj/*
+/Tests.SpecFlow/.vs/Tests.SpecFlow/v15
+/Novice/.vs/Novice/v15
+/Core.Webservice.OData/.vs/Core.Webservice.OData/v15
+/Tests.SpecFlow/Tests.SpecFlow/obj/Debug
+/Core.Webservice.OData/Core.Webservice.OData/obj
+/.vs
