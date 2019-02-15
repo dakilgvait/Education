@@ -1,7 +1,7 @@
 ﻿{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:63196",
       "sslPort": 0
@@ -11,6 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "odata/ODataTable1?$select=Value&$expand=ODataTable2List($select=Value)&$filter= Id eq 9F62B94E-ECDB-4538-98CB-BB348426DDC8",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
