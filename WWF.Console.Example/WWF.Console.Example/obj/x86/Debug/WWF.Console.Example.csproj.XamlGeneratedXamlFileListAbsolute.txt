@@ -1,0 +1,2 @@
+obj\x86\Debug\TestMessage.g.xaml
+obj\x86\Debug\WWF.Console.Example_TestMessage_BeforeInitializeComponentHelper.txt

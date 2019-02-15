@@ -1,0 +1,15 @@
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\bin\Debug\WWF.Console.Example.exe.config
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\bin\Debug\WWF.Console.Example.exe
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\bin\Debug\WWF.Console.Example.pdb
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\TestMessage.g.xaml
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\WWF.Console.Example_TestMessage_BeforeInitializeComponentHelper.txt
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\_WWF.Console.Example.g.cs
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\TestMessage.g.cs
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\WWF.Console.Example_TestMessage_BeforeInitializeComponentHelper.cs
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\WWF.Console.Example.csproj.XamlGeneratedCodeFileListAbsolute.txt
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\WWF.Console.Example.csproj.XamlGeneratedXamlFileListAbsolute.txt
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\WWF.Console.Example.csproj.CoreCompileInputs.cache
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\WWF.Console.Example.dll
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\WWF.Console.Example.pdb
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\AC2C1ABA-CCF6-44D4-8127-588FD4D0A860-DeferredValidationErrors.xml
+C:\Content\GIT\Education\WWF.Console.Example\WWF.Console.Example\obj\x86\Debug\WWF.Console.Example.exe

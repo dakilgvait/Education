@@ -1,0 +1,3 @@
+obj\x86\Debug\_WWF.Console.Example.g.cs
+obj\x86\Debug\TestMessage.g.cs
+obj\x86\Debug\WWF.Console.Example_TestMessage_BeforeInitializeComponentHelper.cs
