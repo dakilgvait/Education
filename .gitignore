@@ -15,3 +15,5 @@ Novice/JintLibrary/obj/*
 /Tests.SpecFlow/TestResults
 /Tests.SpecFlow/Tests.SpecFlow/bin/Debug
 /WWF.Console.Example/.vs/WWF.Console.Example/v15
+/Novice/OData/obj/Debug
+/Encrypting/Encoding/.vs/Encoding/v15
