@@ -1,0 +1,13 @@
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\bin\Debug\InputTrackingExample.exe
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\bin\Debug\InputTrackingExample.pdb
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\MainWindow.baml
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\App.g.cs
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\InputTrackingExample_MarkupCompile.cache
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\InputTrackingExample.g.resources
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\InputTrackingExample.Properties.Resources.resources
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\InputTrackingExample.csproj.GenerateResource.cache
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\InputTrackingExample.csproj.CoreCompileInputs.cache
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\InputTrackingExample.exe
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\InputTrackingExample.pdb
+C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x86\Debug\InputTrackingExample.csprojAssemblyReference.cache
