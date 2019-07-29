@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace InputTrackingExample
 {
@@ -16,7 +17,6 @@ namespace InputTrackingExample
         {
             this.processController = new ProcessController();
             this.commandController = new CommandController();
-            var processes = this.processController.GetProcessList();
             var keyboardList = new Dictionary<int, KeyboardInput>(1);
             KeyboardInput ki = new KeyboardInput(IntPtr.Zero);
             ki.KeyBoardKeyPressed += this.Keyboard_KeyBoardKeyPressed;
@@ -38,6 +38,10 @@ namespace InputTrackingExample
 
         private void CommandController_MessageAction(string message)
         {
+            Task.Run(() =>
+            {
+                this.processController.ParseCommand(message);
+            });
             this.MessageAction?.Invoke(message + Environment.NewLine);
         }
 

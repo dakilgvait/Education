@@ -11,3 +11,17 @@ C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\
 C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.exe
 C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.pdb
 C:\Users\Mykola_Kotenko\Downloads\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.csprojAssemblyReference.cache
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\bin\x64\Debug\InputTrackingExample.exe.config
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\bin\x64\Debug\InputTrackingExample.exe
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\bin\x64\Debug\InputTrackingExample.pdb
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.csprojAssemblyReference.cache
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\MainWindow.baml
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\MainWindow.g.cs
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\App.g.cs
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample_MarkupCompile.cache
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.g.resources
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.Properties.Resources.resources
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.csproj.GenerateResource.cache
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.csproj.CoreCompileInputs.cache
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.exe
+C:\Content\GIT\Education\InputTrackingExample\InputTrackingExample\obj\x64\Debug\InputTrackingExample.pdb

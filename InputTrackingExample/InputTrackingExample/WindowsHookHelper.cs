@@ -16,6 +16,12 @@ namespace InputTrackingExample
         [DllImport("user32.dll")]
         public static extern IntPtr GetWindow(IntPtr HWnd, IntPtr cmd);
 
+        [DllImport("user32.dll")]
+        public static extern bool PostMessage(IntPtr hWnd, IntPtr cmd, int wParam, int lParam);
+
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, IntPtr cmd, int wParam, string lParam);
+
         [DllImport("User32.dll")]
         public static extern IntPtr SetWindowsHookEx(Int32 idHook, HookDelegate lpfn, IntPtr hmod, Int32 dwThreadId);
 
