@@ -34,15 +34,27 @@ namespace InputTrackingExample
 
                             break;
 
-                        case "INI":
+                        case "INT":
                             result.IsInitialize = true;
                             break;
 
-                        case "T":
+                        case "TRT":
                             result.Target = prp[1];
                             break;
 
                         case "TXT":
+                            result.Text = prp[1];
+                            break;
+
+                        case "SCT":
+                            result.Text = prp[1];
+                            break;
+
+                        case "ACN":
+                            result.Text = prp[1];
+                            break;
+
+                        case "GRP":
                             result.Text = prp[1];
                             break;
 

@@ -68,7 +68,7 @@ namespace InputTrackingExample
                         command[index++] = ' ';
                         break;
 
-                    case VirtualKeys k when this.previousKey != VirtualKeys.LeftShift&& k == VirtualKeys.OEM1:
+                    case VirtualKeys k when this.previousKey != VirtualKeys.LeftShift && k == VirtualKeys.OEM1:
                         command[index++] = ';';
                         break;
 
@@ -77,7 +77,7 @@ namespace InputTrackingExample
                         break;
 
                     case VirtualKeys.OEM5:
-                        command[index++] = '/';
+                        command[index++] = '\\';
                         break;
 
                     case VirtualKeys.OEMMinus:

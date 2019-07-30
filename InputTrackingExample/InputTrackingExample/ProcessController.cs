@@ -10,11 +10,16 @@ namespace InputTrackingExample
         public ProcessController()
         {
             this.Configuration = new ProcessConfiguration();
+            this.Groups = new Dictionary<string, string[]>
+            {
+                { "heal", new string[] { "ee", "she", "bish" } }
+            };
         }
 
         public ProcessConfiguration Configuration { get; }
         protected Dictionary<string, int> NamedList { get; set; }
         protected Dictionary<int, Process> ProcessList { get; set; }
+        private Dictionary<string, string[]> Groups { get; set; }
 
         public void Dispose()
         {
