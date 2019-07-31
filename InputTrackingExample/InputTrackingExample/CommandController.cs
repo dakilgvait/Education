@@ -60,6 +60,10 @@ namespace InputTrackingExample
                         command[index++] = k.ToString()[1];
                         break;
 
+                    case VirtualKeys k when k >= VirtualKeys.Numpad0 && k <= VirtualKeys.Numpad9:
+                        command[index++] = k.ToString().Replace("Numpad", "")[0];
+                        break;
+
                     case VirtualKeys.Back:
                         index--;
                         break;

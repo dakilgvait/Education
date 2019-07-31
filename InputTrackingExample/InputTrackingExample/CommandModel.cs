@@ -17,7 +17,7 @@ namespace InputTrackingExample
         public static CommandModel Parse(string cmd)
         {
             var result = new CommandModel();
-            var arr = cmd.Split('-').Select(s => s.Trim()).Where(s => s.Length > 0).Select(s => s).ToArray();
+            var arr = cmd.Split(new string[] { " -" }, StringSplitOptions.None).Select(s => s.Trim()).Where(s => s.Length > 0).Select(s => s).ToArray();
 
             if (arr.Length > 1 && arr[0] == ":CMD")
             {
@@ -34,7 +34,7 @@ namespace InputTrackingExample
 
                             break;
 
-                        case "INT":
+                        case "INI":
                             result.IsInitialize = true;
                             break;
 
@@ -55,7 +55,7 @@ namespace InputTrackingExample
                             break;
 
                         case "GRP":
-                            result.Text = prp[1];
+                            result.Group = prp[1];
                             break;
 
                         default: break;

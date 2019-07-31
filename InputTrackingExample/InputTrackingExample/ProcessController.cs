@@ -12,7 +12,8 @@ namespace InputTrackingExample
             this.Configuration = new ProcessConfiguration();
             this.Groups = new Dictionary<string, string[]>
             {
-                { "heal", new string[] { "ee", "she", "bish" } }
+                { "heal", new string[] { "ee", "she", "bish" } },
+                { "tank", new string[] { "tk", "pl", "shk" } }
             };
         }
 
@@ -77,6 +78,16 @@ namespace InputTrackingExample
                 if (this.GetProcessList().ContainsKey(key))
                 {
                     this.GetNamedList().Add(s[1], key);
+                }
+            }
+            else if (!string.IsNullOrEmpty(cm.Group))
+            {
+                var pers = this.Groups[cm.Group.ToLower()];
+                foreach (var p in pers)
+                {
+                    var idx = this.GetNamedList()[p.ToUpper()];
+                    var proc = this.GetProcessById(idx);
+                    this.SendMessage(cm.GetText(), proc);
                 }
             }
             else
