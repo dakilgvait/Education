@@ -17,3 +17,11 @@ Novice/JintLibrary/obj/*
 /WWF.Console.Example/.vs/WWF.Console.Example/v15
 /Novice/OData/obj/Debug
 /Encrypting/Encoding/.vs/Encoding/v15
+/Veracode/VeracodeWCF
+/Test/PersonApplication/.vs
+/Test/PersonApplication/Person.DTO/bin/Debug/netcoreapp2.2
+/Test/PersonApplication/Person.DTO/obj
+/Test/PersonApplication/Person.DAL/bin
+/Test/PersonApplication/Person.DAL/obj
+/Test/PersonApplication/DashboardApplication/bin
+/Test/PersonApplication/DashboardApplication/obj
