@@ -42,14 +42,14 @@ namespace DashboardApplication.Controllers
             PersonViewModel[] dataModel = dataEntity
                    .Skip(model.start)
                    .Take(model.length)
-                   .Select(entity => new PersonViewModel() {
-                       Id = entity.Id,
-                       Birthdate = entity.Birthdate,
-                       FirstName = entity.FirstName,
-                       Gender = entity.Gender.Name,
-                       LastName = entity.LastName,
-                       PersonNumber = entity.PersonNumber,
-                       Salary = entity.Salary
+                   .Select(e => new PersonViewModel() {
+                       Id = e.Id,
+                       Birthdate = e.Birthdate,
+                       FirstName = e.FirstName,
+                       Gender = e.Gender.Name,
+                       LastName = e.LastName,
+                       PersonNumber = e.PersonNumber,
+                       Salary = e.Salary
                    }).ToArray();
 
             var response = new ResponseAjaxPostModel() {
@@ -63,7 +63,7 @@ namespace DashboardApplication.Controllers
         }
 
         [HttpPost]
-        public JsonResult Delete(PersonEditModel model)
+        public JsonResult Delete(PersonViewModel model)
         {
             var entity = new PersonEntity() {
                 Id = model.Id,
@@ -71,8 +71,7 @@ namespace DashboardApplication.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Salary = model.Salary,
-                PersonNumber = model.PersonNumber,
-                GenderId = model.Gender
+                PersonNumber = model.PersonNumber
             };
             int count = this.appUnitOfWork.PersonRepository.Delete(entity);
             return Json(new { count = count });

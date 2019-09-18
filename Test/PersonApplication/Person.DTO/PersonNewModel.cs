@@ -1,6 +1,9 @@
-﻿namespace Person.DTO
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace Person.DTO
 {
-    public class PersonNewModel : PersonBaseModel
+    public class PersonNewModel : PersonBaeModel
     {
         public int Gender { get; set; }
     }

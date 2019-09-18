@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Person.DTO
 {
-    public class PersonBaseModel
+    public class PersonBaeModel
     {
         [Required]
         [StringLength(25)]

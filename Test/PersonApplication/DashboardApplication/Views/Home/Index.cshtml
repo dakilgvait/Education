@@ -6,23 +6,38 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<div class="container">
-    <table id="personGrid"
-           action-view="@Url.Action("View","Data")"
-           action-edit="@Url.Action("Edit","Data")"
-           action-delete="@Url.Action("Delete","Data")"
-           action-create="@Url.Action("Create","Data")"
-           action-lookup-genders="@Url.Action("Genders","Lookup")">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Person number</th>
-                <th>Birthdate</th>
-                <th>Gender</th>
-                <th>Salary</th>
-            </tr>
-        </thead>
-    </table>
+<div>
+    <h4 class="main-title text-center">Page title</h4>
+</div>
+<div class="outer-container">
+    <div class="main-left-sidebar main-color">
+        <ul>
+            <li>Sirius: ...</li>
+            <li>Alpha Centauri System: ...</li>
+            <li>Betelgeuse: ...</li>
+            <li>Rigel: ...</li>
+            <li>Vega: ...</li>
+            <li>Pleiades: ...</li>
+            <li>Antares: ...</li>
+        </ul>
+    </div>
+    <div class="container">
+        <table id="personGrid"
+               action-view="@Url.Action("View","Data")"
+               action-edit="@Url.Action("Edit","Data")"
+               action-delete="@Url.Action("Delete","Data")"
+               action-create="@Url.Action("Create","Data")">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Person number</th>
+                    <th>Birthdate</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 </div>
