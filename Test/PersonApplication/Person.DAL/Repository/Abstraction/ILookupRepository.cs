@@ -5,6 +5,8 @@ namespace Person.DAL.Repository
 {
     public interface ILookupRepository
     {
-        IQueryable<GenderEntity> GetGenderEntities();
+        GenderEntity[] GetGenderEntities();
+
+        GenderEntity[] GetGenderEntitiesByName(string name);
     }
 }

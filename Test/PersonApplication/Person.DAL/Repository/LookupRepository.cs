@@ -9,9 +9,14 @@ namespace Person.DAL.Repository
         public LookupRepository(EntityContext context)
             : base(context) { }
 
-        public IQueryable<GenderEntity> GetGenderEntities()
+        public GenderEntity[] GetGenderEntitiesByName(string name)
         {
-            return this.EntityContext.GenderEntities.Select(i => i);
+            return this.EntityContext.GenderEntities.Where(i => i.Name == name).ToArray();
+        }
+
+        GenderEntity[] ILookupRepository.GetGenderEntities()
+        {
+            return this.EntityContext.GenderEntities.ToArray();
         }
     }
 }

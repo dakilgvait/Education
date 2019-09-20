@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace Person.DTO
+﻿namespace Person.DTO
 {
     public class PersonEditModel : PersonBaeModel
     {

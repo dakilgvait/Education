@@ -1,0 +1,15 @@
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\bin\Debug\netcoreapp2.2\Person.Service.deps.json
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\bin\Debug\netcoreapp2.2\Person.Service.dll
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\bin\Debug\netcoreapp2.2\Person.Service.pdb
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\bin\Debug\netcoreapp2.2\Person.DAL.dll
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\bin\Debug\netcoreapp2.2\Person.DTO.dll
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\bin\Debug\netcoreapp2.2\Person.DAL.pdb
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\bin\Debug\netcoreapp2.2\Person.DTO.pdb
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\obj\Debug\netcoreapp2.2\Person.Service.csprojAssemblyReference.cache
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\obj\Debug\netcoreapp2.2\Person.Service.csproj.CoreCompileInputs.cache
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\obj\Debug\netcoreapp2.2\Person.Service.AssemblyInfoInputs.cache
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\obj\Debug\netcoreapp2.2\Person.Service.AssemblyInfo.cs
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\obj\Debug\netcoreapp2.2\Person.Service.csproj.CopyComplete
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\obj\Debug\netcoreapp2.2\Person.Service.dll
+C:\Content\GIT\Education\Test\PersonApplication\Person.Service\obj\Debug\netcoreapp2.2\Person.Service.pdb

@@ -1,20 +1,23 @@
 ﻿using Person.DAL.Entity;
-using System.Linq;
 
 namespace Person.DAL.Repository
 {
     public interface IPersonRepository
     {
-        IQueryable<PersonEntity> GetPersonEntities();
+        PersonEntity[] GetPersonEntities(int countSkip, int countTake);
 
-        IQueryable<PersonEntity> GetPerson(int id);
+        PersonEntity[] FullTextSearchEntities(string value, int countSkip, int countTake);
 
-        int Create(PersonEntity entity);
+        PersonEntity GetPersonById(int id);
 
-        int Delete(PersonEntity entity);
+        PersonEntity Insert(PersonEntity entity);
 
-        int Edit(PersonEntity entity);
+        PersonEntity Update(PersonEntity entity);
+
+        PersonEntity Delete(PersonEntity entity);
 
         int GetCount();
+
+        int FullTextSearchEntitiesCount(string value);
     }
 }

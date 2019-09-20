@@ -1,46 +1,36 @@
 ﻿using DashboardApplication.Models.Select2;
 using Microsoft.AspNetCore.Mvc;
-using Person.DAL.Entity;
-using Person.DAL.UnitOfWork;
 using Person.DTO;
-using System.Linq;
+using Person.Service;
+using Person.Service.Abstraction;
+using Unity;
 
 namespace DashboardApplication.Controllers
 {
     public class LookupController : Controller
     {
-        private IApplicationUnitOfWork appUnitOfWork;
+        private IGenderService genderService;
 
-        public LookupController()
+        public LookupController(IUnityContainer container)
         {
-            this.appUnitOfWork = new ApplicationUOW();
+            this.genderService = new GenderService(container);
         }
 
         [HttpPost]
         public JsonResult Genders(RequestAjaxPostModel model)
         {
-            IQueryable<GenderEntity> dataEntity = this.appUnitOfWork.LookupRepository.GetGenderEntities();
-
-            GenderEntity[] genderEntities;
+            GenderModel[] genderModels;
 
             if (string.IsNullOrEmpty(model.name))
             {
-                genderEntities = dataEntity.ToArray();
+                genderModels = this.genderService.GetGenders();
             }
             else
             {
-                genderEntities = dataEntity.Where(i => i.Name == model.name).ToArray();
+                genderModels = this.genderService.GetGenders(model.name);
             }
 
-            var dataModel = genderEntities.Select(entity => new ItemModel() {
-                Id = entity.Id,
-                Text = entity.Name
-            });
-
-            var response = new ResponseAjaxPostModel() {
-                items = dataModel.ToArray()
-            };
-            return Json(response);
+            return Json(new ResponseAjaxPostModel(genderModels));
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿using Person.DAL.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Person.DAL.Context;
 using Person.DAL.Entity;
-using System;
 using System.Linq;
 
 namespace Person.DAL.Repository
@@ -10,25 +10,23 @@ namespace Person.DAL.Repository
         public PersonRepository(EntityContext context)
             : base(context) { }
 
-        public int Create(PersonEntity entity)
+        public PersonEntity Delete(PersonEntity entity)
         {
-            var context = this.EntityContext;
-            context.PersonEntities.Add(entity);
-            return context.SaveChanges();
+            this.EntityContext.PersonEntities.Remove(entity);
+            int count = this.EntityContext.SaveChanges();
+            return entity;
         }
 
-        public int Delete(PersonEntity entity)
+        public PersonEntity[] FullTextSearchEntities(string value, int countSkip, int countTake)
         {
-            var context = this.EntityContext;
-            context.PersonEntities.Remove(entity);
-            return context.SaveChanges();
+            IQueryable<PersonEntity> entitiesFiltered = this.FullTextSearchEntities(this.EntityContext.PersonEntities, value);
+            IQueryable<PersonEntity> entitiesPaginated = this.GetPersonEntities(entitiesFiltered, countSkip, countTake);
+            return entitiesPaginated.ToArray();
         }
 
-        public int Edit(PersonEntity entity)
+        public int FullTextSearchEntitiesCount(string value)
         {
-            var context = this.EntityContext;
-            context.PersonEntities.Update(entity);
-            return context.SaveChanges();
+            return this.FullTextSearchEntities(this.EntityContext.PersonEntities, value).Count();
         }
 
         public int GetCount()
@@ -36,14 +34,42 @@ namespace Person.DAL.Repository
             return this.EntityContext.PersonEntities.Count();
         }
 
-        public IQueryable<PersonEntity> GetPerson(int id)
+        public PersonEntity GetPersonById(int id)
         {
-            return this.EntityContext.PersonEntities.Where(i => i.Id == id);
+            return this.EntityContext.PersonEntities.Where(i => i.Id == id).First();
         }
 
-        public IQueryable<PersonEntity> GetPersonEntities()
+        public PersonEntity[] GetPersonEntities(int countSkip, int countTake)
         {
-            return this.EntityContext.PersonEntities.Select(i => i);
+            return this.GetPersonEntities(this.EntityContext.PersonEntities, countSkip, countTake).ToArray();
+        }
+
+        public PersonEntity Insert(PersonEntity entity)
+        {
+            this.EntityContext.PersonEntities.Add(entity);
+            int count = this.EntityContext.SaveChanges();
+            return entity;
+        }
+
+        public PersonEntity Update(PersonEntity entity)
+        {
+            this.EntityContext.PersonEntities.Update(entity);
+            int count = this.EntityContext.SaveChanges();
+            return entity;
+        }
+
+        protected IQueryable<PersonEntity> GetPersonEntities(IQueryable<PersonEntity> list, int countSkip, int countTake)
+        {
+            return list.Include(c => c.Gender).Skip(countSkip).Take(countTake);
+        }
+
+        protected IQueryable<PersonEntity> FullTextSearchEntities(IQueryable<PersonEntity> list, string value)
+        {
+            return list.Where(e => e.FirstName.Contains(value)
+            || e.LastName.Contains(value)
+            || e.Gender.Name.Contains(value)
+            || e.PersonNumber.Contains(value)
+            || e.Salary.ToString().Contains(value));
         }
     }
 }

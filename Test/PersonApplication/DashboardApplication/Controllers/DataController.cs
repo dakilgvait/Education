@@ -1,80 +1,53 @@
 ﻿using DashboardApplication.Models.DataTable;
 using Microsoft.AspNetCore.Mvc;
-using Person.DAL.Entity;
-using Person.DAL.UnitOfWork;
 using Person.DTO;
+using Person.Service;
+using Person.Service.Abstraction;
 using System.Linq;
+using Unity;
 
 namespace DashboardApplication.Controllers
 {
     public class DataController : Controller
     {
-        private IApplicationUnitOfWork appUnitOfWork;
+        private IPersonService personService;
 
-        public DataController()
+        public DataController(IUnityContainer container)
         {
-            this.appUnitOfWork = new ApplicationUOW();
+            this.personService = new PersonService(container);
         }
 
         [HttpPost]
         public JsonResult View(RequstAjaxPostModel model)
         {
-            IQueryable<PersonEntity> dataEntity;
-            int countTotal;
+            PersonViewModel[] persons;
+            int totalCount;
 
             if (string.IsNullOrEmpty(model.search.value))
             {
-                dataEntity = this.appUnitOfWork.PersonRepository.GetPersonEntities();
-                countTotal = dataEntity.Count();
+                totalCount = this.personService.Count();
+                persons = this.personService.GetPaginatedList(model.start, model.length);
             }
             else
             {
-                dataEntity = this.appUnitOfWork.PersonRepository.GetPersonEntities().Where(
-                    e => e.FirstName.Contains(model.search.value)
-                    || e.LastName.Contains(model.search.value)
-                    || e.Gender.Name.Contains(model.search.value)
-                    || e.PersonNumber.Contains(model.search.value)
-                    || e.Salary.ToString().Contains(model.search.value));
-
-                countTotal = dataEntity.Count();
+                totalCount = this.personService.GetPaginatedFullTextSearchCount(model.search.value);
+                persons = this.personService.GetPaginatedFullTextSearch(model.search.value, model.start, model.length);
             }
 
-            PersonViewModel[] dataModel = dataEntity
-                   .Skip(model.start)
-                   .Take(model.length)
-                   .Select(e => new PersonViewModel() {
-                       Id = e.Id,
-                       Birthdate = e.Birthdate,
-                       FirstName = e.FirstName,
-                       Gender = e.Gender.Name,
-                       LastName = e.LastName,
-                       PersonNumber = e.PersonNumber,
-                       Salary = e.Salary
-                   }).ToArray();
-
-            var response = new ResponseAjaxPostModel() {
-                draw = model.draw,
-                recordsTotal = countTotal,
-                recordsFiltered = countTotal,
-                data = dataModel
+            var response = new ResponseAjaxPostModel(persons)
+            {
+                recordsFiltered = totalCount,
+                draw = model.draw
             };
 
             return Json(response);
         }
 
         [HttpPost]
-        public JsonResult Delete(PersonViewModel model)
+        public JsonResult Delete(PersonEditModel model)
         {
-            var entity = new PersonEntity() {
-                Id = model.Id,
-                Birthdate = model.Birthdate,
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Salary = model.Salary,
-                PersonNumber = model.PersonNumber
-            };
-            int count = this.appUnitOfWork.PersonRepository.Delete(entity);
-            return Json(new { count = count });
+            var response = this.personService.Delete(model);
+            return Json(response);
         }
 
         [HttpPost]
@@ -82,28 +55,7 @@ namespace DashboardApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                var entity = new PersonEntity() {
-                    Id = model.Id,
-                    Birthdate = model.Birthdate,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Salary = model.Salary,
-                    PersonNumber = model.PersonNumber,
-                    GenderId = model.Gender
-                };
-                int count = this.appUnitOfWork.PersonRepository.Edit(entity);
-
-                var response = this.appUnitOfWork.PersonRepository.GetPerson(entity.Id).Select(
-                        e => new PersonViewModel() {
-                            Id = e.Id,
-                            Birthdate = e.Birthdate,
-                            FirstName = e.FirstName,
-                            Gender = e.Gender.Name,
-                            LastName = e.LastName,
-                            PersonNumber = e.PersonNumber,
-                            Salary = e.Salary
-                        }).First();
-
+                var response = this.personService.Update(model);
                 return Json(response);
             }
             else
@@ -119,28 +71,7 @@ namespace DashboardApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                var entity = new PersonEntity() {
-                    Birthdate = model.Birthdate,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Salary = model.Salary,
-                    PersonNumber = model.PersonNumber,
-                    GenderId = model.Gender
-                };
-
-                this.appUnitOfWork.PersonRepository.Create(entity);
-
-                var response = this.appUnitOfWork.PersonRepository.GetPerson(entity.Id).Select(
-                    e => new PersonViewModel() {
-                        Id = e.Id,
-                        Birthdate = e.Birthdate,
-                        FirstName = e.FirstName,
-                        Gender = e.Gender.Name,
-                        LastName = e.LastName,
-                        PersonNumber = e.PersonNumber,
-                        Salary = e.Salary
-                    }).First();
-
+                var response = this.personService.Create(model);
                 return Json(response);
             }
             else

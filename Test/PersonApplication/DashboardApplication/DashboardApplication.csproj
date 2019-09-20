@@ -10,12 +10,12 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Unity" Version="5.11.1" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Person.DAL\Person.DAL.csproj" />
-    <ProjectReference Include="..\Person.DTO\Person.DTO.csproj" />
+    <ProjectReference Include="..\Person.Service\Person.Service.csproj" />
   </ItemGroup>
 
 
