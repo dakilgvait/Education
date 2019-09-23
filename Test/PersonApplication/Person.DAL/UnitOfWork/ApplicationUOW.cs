@@ -1,6 +1,7 @@
 ﻿using Person.DAL.Context;
 using Person.DAL.Repository;
 using Unity;
+using Unity.Resolution;
 
 namespace Person.DAL.UnitOfWork
 {
@@ -9,8 +10,8 @@ namespace Person.DAL.UnitOfWork
         public ApplicationUOW(IUnityContainer container)
         {
             EntityContext entityContext = new EntityContext();
-            this.PersonRepository = container.Resolve<IPersonRepository>();
-            this.LookupRepository = container.Resolve<ILookupRepository>();
+            this.PersonRepository = container.Resolve<IPersonRepository>(new ParameterOverride(typeof(EntityContext), entityContext));
+            this.LookupRepository = container.Resolve<ILookupRepository>(new ParameterOverride(typeof(EntityContext), entityContext));
         }
 
         public IPersonRepository PersonRepository { get; }
