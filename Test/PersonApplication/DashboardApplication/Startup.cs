@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DashboardApplication.Controllers;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Person.DAL.UnitOfWork;
 using Person.Service;
 using Person.Service.Abstraction;
+using ServiceStack.Redis;
+using System;
+using System.IO;
 using Unity;
 
 namespace DashboardApplication
@@ -25,21 +23,20 @@ namespace DashboardApplication
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var config = new ConfigurationBuilder()
+               .SetBasePath(Path.Combine(AppContext.BaseDirectory))
+               .AddJsonFile("appsettings.json", optional: true)
+               .Build();
+
             services.Configure<CookiePolicyOptions>(options =>
             {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            IUnityContainer container = new UnityContainer();
-            BaseService.InitializeContainer(container);
-            ApplicationUOW.InitializeContainer(container);
-            container.RegisterType<IPersonService, PersonService>();
-            container.RegisterType<IGenderService, GenderService>();
-            services.AddSingleton<IUnityContainer>(container);
+
+            services.AddSingleton<IUnityContainer>(this.InitializeUnityContainer(config));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -60,10 +57,26 @@ namespace DashboardApplication
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        protected IUnityContainer InitializeUnityContainer(IConfigurationRoot config)
+        {
+            IUnityContainer container = new UnityContainer();
+            BaseService.InitializeContainer(container);
+            ApplicationUOW.InitializeContainer(container);
+            container.RegisterType<IPersonService, PersonService>();
+            container.RegisterType<IGenderService, GenderService>();
+            container.RegisterInstance<IRedisClientsManager>(this.InitializeRedisClientsManager(config));
+            return container;
+        }
+
+        protected IRedisClientsManager InitializeRedisClientsManager(IConfigurationRoot config)
+        {
+            Uri uri = new Uri(config["RedisConnectionString:Main"]);
+            string connectionUrl = $"{uri.Scheme}://{uri.Authority}?password={uri.UserInfo.Split(':')[1]}";
+            return new RedisManagerPool(connectionUrl);
         }
     }
 }

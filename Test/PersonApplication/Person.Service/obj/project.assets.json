@@ -3917,7 +3917,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://dca2chup6bld01.mscorp.com:65/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
